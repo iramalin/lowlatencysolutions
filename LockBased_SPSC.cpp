@@ -63,20 +63,26 @@ int main()
   consumer.join();
   producer.join();
   auto endTime = std::chrono::high_resolution_clock::now();
-  std::cout << "Time taken = " << std::chrono::duration_cast<std::chrono::nanoseconds>(endTime - startTime).count() << "ns" << std::endl;
+  std::cout << "Time taken = " << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() << "ms" << std::endl;
 }
 
 /*iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ g++ LockBased_SPSC.cpp -pthread -std=c++14
  *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ ./a.out
- *Time taken = 208663990ns
+ *Time taken = 251ms
  *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ ./a.out
- *Time taken = 209914507ns
+ *Time taken = 198ms
  *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ ./a.out
- *Time taken = 227302691ns
+ *Time taken = 207ms
  *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ ./a.out
- *Time taken = 191686176ns
+ *Time taken = 252ms
  *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ ./a.out
- *Time taken = 215062307ns
+ *Time taken = 214ms
+ *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ ./a.out
+ *Time taken = 263ms
+ *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ ./a.out
+ *Time taken = 208ms
+ *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ ./a.out
+ *Time taken = 182ms
  *iramalin@iramalin-VirtualBox:~/git/lowlatencysolutions$ lscpu
  *Architecture:          x86_64
  *CPU op-mode(s):        32-bit, 64-bit
